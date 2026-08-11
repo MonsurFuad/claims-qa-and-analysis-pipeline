@@ -36,11 +36,17 @@ Full findings, with methodology and numbers, are in [`/docs`](./docs).
 │   ├── 02_create_beneficiary_summary_2008_table.sql
 │   ├── ...
 │   └── 27_analysis8_demographic_breakdown_sex.sql
-└── docs/                               # Findings write-ups
-    ├── QA_findings_summary.md
-    ├── data_cleaning_process.md
-    ├── data_analysis_findings.md
-    └── extended_analysis_findings.md
+├── docs/                               # Findings write-ups
+│   ├── QA_findings_summary.md
+│   ├── data_cleaning_process.md
+│   ├── data_analysis_findings.md
+│   └── extended_analysis_findings.md
+└── results/                            # Raw query output (CSV) for key findings
+    ├── rule1_orphaned_claims.csv
+    ├── rule5_duplicate_claim_ids.csv
+    ├── rule6_root_cause_cluster.csv
+    ├── analysis6_readmission_comparison.csv
+    └── analysis2_top_drg_codes.csv
 ```
 
 ## How to Reproduce This Project
