@@ -30,23 +30,35 @@ Full findings, with methodology and numbers, are in [`/docs`](./docs).
 
 ```
 ├── README.md
-├── SOP.md                              # Step-by-step guide to reproduce this project
-├── sql/                                # All SQL scripts, numbered in execution order
-│   ├── 01_create_inpatient_claims_table.sql
-│   ├── 02_create_beneficiary_summary_2008_table.sql
-│   ├── ...
-│   └── 27_analysis8_demographic_breakdown_sex.sql
-├── docs/                               # Findings write-ups
+├── SOP.md                                    # Step-by-step guide to reproduce this project
+├── sql/                                       # All SQL scripts
+│   ├── inpatient_claims.sql                   # Create raw inpatient claims table
+│   ├── beneficiary_summary_2008.sql           # Create raw beneficiary summary table
+│   ├── Rule_1.sql ... Rule_7.sql              # QA audit rules 1–7
+│   ├── inpatient_claims_clean.sql             # Initial cleaning pass (type conversion, flagging)
+│   ├── inpatient_claims_final.sql             # Final cleaned + excluded tables
+│   ├── beneficiary_summary_2008_clean.sql     # Cleaned beneficiary table
+│   └── Analysis_1.sql ... Analysis_8.sql      # Data analyses 1–8
+├── docs/                                      # Findings write-ups
 │   ├── QA_findings_summary.md
 │   ├── data_cleaning_process.md
-│   ├── data_analysis_findings.md
-│   └── extended_analysis_findings.md
-└── results/                            # Raw query output (CSV) for key findings
-    ├── rule1_orphaned_claims.csv
+│   └── data_analysis_findings.md
+└── results/                                   # Raw query output (CSV) for key findings
+    ├── rule1_orphaned_claims_summary.csv
+    ├── rule2_date_logic_summary.csv
+    ├── rule3_payment_distribution_stats.csv
+    ├── rule4_beneficiary_lifetime_summary.csv
     ├── rule5_duplicate_claim_ids.csv
-    ├── rule6_root_cause_cluster.csv
-    ├── analysis6_readmission_comparison.csv
-    └── analysis2_top_drg_codes.csv
+    ├── rule6_missing_diagnosis_summary.csv
+    ├── rule7_root_cause_incomplete_cluster.csv
+    ├── analysis1_claims_by_year.csv
+    ├── analysis2_top_drg_codes.csv
+    ├── analysis3_chronic_conditions_vs_cost.csv
+    ├── analysis4_length_of_stay_vs_cost.csv
+    ├── analysis5_top_providers.csv
+    ├── analysis6_readmission_cost_comparison.csv
+    ├── analysis7_geographic_breakdown.csv
+    └── analysis8_demographic_sex.csv
 ```
 
 ## How to Reproduce This Project
